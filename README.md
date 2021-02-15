@@ -12,8 +12,13 @@ Configurar database
     Editar o arquivo .env na raiz do projeto
     preencher as configurações do database: https://prnt.sc/zlhzrc
     
-Executar Tests (ao executar o test a tabela pessoa sera limpa)
+Executar Tests
 
+    - Rotas e views
+    - Criação, alteração e exclusão registros via controller
+    - Criação de registros via seeder
+    - Exclusão de todos os registros gerados ( truncate table pessoa )
+    Comando:    
     ./vendor/bin/phpunit
     
 Executar cadastro de seed (para gerar registros fakes)
