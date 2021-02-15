@@ -12,11 +12,11 @@ Configurar database
     Editar o arquivo .env na raiz do projeto
     preencher as configurações do database: https://prnt.sc/zlhzrc
     
-Executar Tests ( ao executar o test a tabela pessoa sera limpa )
+Executar Tests (ao executar o test a tabela pessoa sera limpa)
 
     ./vendor/bin/phpunit
     
-Executar cadastro de seed
+Executar cadastro de seed (para gerar registros fakes)
 
     php artisan db:seed
     
