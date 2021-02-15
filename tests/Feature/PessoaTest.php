@@ -9,7 +9,7 @@ use Tests\TestCase;
 class PessoaTest extends TestCase
 {
 
-    public function testStore()
+    public function testPeople()
     {
         $faker = \Faker\Factory::create();
         $rand = rand(1, 3);
