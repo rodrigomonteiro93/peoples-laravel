@@ -44,6 +44,9 @@ class PessoaTest extends TestCase
         $data = $data->toArray()[0];
 
         $this->assertEquals($responseTest, $data);
+        //Test show
+        $testHome = $this->get('/show/'.$data['id']);
+        $testHome->assertStatus(200);
         //Test Update
         $this->updateData($data);
         //Test Delete
