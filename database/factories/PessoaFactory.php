@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Model\Pais;
 use App\Model\Pessoa;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\DB;
@@ -36,9 +37,9 @@ $factory->define(Pessoa::class, function (Faker $faker) {
     }
     return [
         'id' => intval(DB::select("select nextval('seq_pessoa')")['0']->nextval),
-        'nome' => $faker->name,
+        'nome' => $faker->name.' (criado via - Seed)',
         'nascimento' => $faker->date('Y-m-d'),
         'genero' => $gen,
-        'pais_id' => rand(1,2)
+        'pais_id' => Pais::inRandomOrder()->get()->first()->id
     ];
 });

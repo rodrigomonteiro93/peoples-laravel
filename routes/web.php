@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PessoaController@index');
+Route::get('/', 'PessoaController@index')->name('index');
 Route::post('store', 'PessoaController@store')->name('pessoa.store');
 Route::put('update/{id}', 'PessoaController@update')->name('pessoa.update');
-Route::get('destroy/{id}', 'PessoaController@destroy');
+Route::get('destroy/{id}', 'PessoaController@destroy')->name('pessoa.destroy');
 Route::get('show/{id}', 'PessoaController@show')->name('show');
-Route::get('clear', 'PessoaController@clear');
+Route::get('clear', 'PessoaController@clear')->name('pessoa.clear');

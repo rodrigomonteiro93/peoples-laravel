@@ -34,7 +34,8 @@ class PessoaController extends Controller
 
             return response()->json([
                 'id' => $created->id,
-                'message' => $msgSuccess
+                'message' => $msgSuccess,
+                'people' => $created
             ], 200);
 
         }catch (\Exception $e){
