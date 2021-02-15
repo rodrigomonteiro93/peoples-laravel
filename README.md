@@ -31,6 +31,7 @@ Técnologias
     Jquery
     Bootstrap 4
     Tests phpUnit
+    Database PostgreSQL
     
 Prints em funcionamento
 
