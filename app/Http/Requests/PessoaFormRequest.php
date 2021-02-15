@@ -34,6 +34,7 @@ class PessoaFormRequest extends FormRequest
     {
         return [
             'nome.required' => 'Campo nome é obrigatório!',
+            'nascimento.date_format' => 'Formato de date não é válido: dia/mes/ano!',
             'nascimento.required' => 'Campo data de nascimento é obrigatório!',
             'nascimento.before' => 'Você não pode nascer depois de hoje!',
             'pais_id.required' => 'Selecione seu país!',

@@ -44,6 +44,35 @@ class PessoaTest extends TestCase
         $data = $data->toArray()[0];
 
         $this->assertEquals($responseTest, $data);
+        //Test Update
+        $this->updateData($data);
+        //Test Delete
+        $this->deleteData($data);
+    }
+
+    public function updateData($data){
+        $response = $this->json('PUT', route('pessoa.update', $data['id']), [
+            'nome' => ' (editado via - Test)',
+            'nascimento' => $data['nascimento'],
+            'genero' => $data['genero'],
+            'pais_id' => $data['pais_id']
+        ]);
+        $responseTest = $response->json('people');
+        $newData = Pessoa::find($responseTest['id']);
+
+        $this->assertEquals($responseTest, $newData->toArray());
+    }
+
+    public function deleteData($data){
+        $testHome = $this->get('destroy/'.$data['id']);
+        $testHome->assertStatus(200);
+    }
+
+    public function testClear(){
+        factory(\App\Model\Pessoa::class, 15)
+            ->create();
+        $testHome = $this->get('/clear');
+        $testHome->assertStatus(200);
     }
 
     public function testIndex(){

@@ -52,14 +52,17 @@ class PessoaController extends Controller
         try {
             $data = $request->all();
             Pessoa::find($id)->update($data);
+            $updated = Pessoa::find($id);
 
             DB::commit();
             $msgSuccess = 'Pessoa alterada com sucesso, a página será atualiza em instantes.';
 
             return response()->json([
                 'id' => $id,
-                'message' => $msgSuccess
+                'message' => $msgSuccess,
+                'people' => $updated
             ], 200);
+
         }catch (\Exception $e){
             DB::rollBack();
             return response()->json([
